@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>تثبيت التطبيق | Proton VPN</title>
+  <title>تثبيت Proton VPN | AZZ Mobile Store</title>
 
-  <!-- استدعاء خط عربي احترافي -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --gold-primary: #a38146;
+      --gold-gradient: linear-gradient(135deg, #c5a059 0%, #8e6d35 100%);
+      --bg-light: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #64748b;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,9 +24,11 @@
     }
 
     body {
-      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
-      color: #f8fafc;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f8f9fa;
+      background-image: radial-gradient(circle at 2px 2px, #e2e8f0 1px, transparent 0);
+      background-size: 24px 24px;
+      color: var(--text-main);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,32 +37,46 @@
     }
 
     .card {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 40px 30px;
-      border-radius: 28px;
+      background: var(--bg-light);
+      border: 1px solid rgba(163, 129, 70, 0.15);
+      padding: 40px 25px;
+      border-radius: 30px;
       text-align: center;
       width: 100%;
-      max-width: 360px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      max-width: 380px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .app-icon-wrapper {
-      background: #ffffff;
-      width: 96px;
-      height: 96px;
+    /* Store Branding Header */
+    .store-logo {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(163, 129, 70, 0.2), transparent);
+      margin-bottom: 30px;
+    }
+
+    /* App Specific UI */
+    .app-icon-container {
+      background: #fdfdfd;
+      width: 100px;
+      height: 100px;
       border-radius: 24px;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      margin-bottom: 24px;
-      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+      border: 1px solid #f1f5f9;
+      padding: 15px;
     }
 
     .app-icon {
@@ -66,59 +89,48 @@
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 8px;
-      letter-spacing: 0.5px;
     }
 
     p.description {
       font-size: 15px;
-      color: #94a3b8;
+      color: var(--text-muted);
       margin-bottom: 32px;
-      line-height: 1.5;
     }
 
+    /* Gold Button */
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       width: 100%;
-      padding: 16px;
+      padding: 18px;
       border: none;
-      border-radius: 16px;
-      background: #3b82f6; /* لون أزرق عصري */
+      border-radius: 18px;
+      background: var(--gold-gradient);
       color: #ffffff;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 17px;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 10px 25px rgba(163, 129, 70, 0.35);
     }
 
     .btn:hover {
-      background: #2563eb;
       transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 15px 30px rgba(163, 129, 70, 0.45);
     }
 
     .btn:active {
       transform: translateY(0);
     }
 
-    .btn svg {
-      width: 20px;
-      height: 20px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
     .note-box {
-      margin-top: 24px;
-      padding: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
+      margin-top: 25px;
+      padding: 15px;
+      background: #fffcf5;
+      border-radius: 15px;
+      border: 1px solid rgba(163, 129, 70, 0.1);
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -126,54 +138,53 @@
     }
 
     .note-icon {
-      color: #cbd5e1;
-      flex-shrink: 0;
+      color: var(--gold-primary);
       margin-top: 2px;
     }
 
     .note-text {
-      font-size: 12px;
-      color: #cbd5e1;
+      font-size: 13px;
+      color: #555;
       line-height: 1.6;
     }
 
     .highlight {
-      color: #3b82f6;
-      font-weight: 600;
+      color: var(--gold-primary);
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <!-- أيقونة التطبيق -->
-    <div class="app-icon-wrapper">
+    <img class="store-logo" src="https://i.ibb.co/kgW2Csk6/Whats-App-Image-2026-04-08-at-1-43-04-AM-removebg-preview.png" alt="AZZ Mobile Store">
+    
+    <div class="divider"></div>
+
+    <div class="app-icon-container">
       <img class="app-icon" src="https://vpncdn.protonweb.com/image-transformation/?s=c&image=image%2Fupload%2Fv1774890277%2Fstatic%2Flogos%2Ficons%2Fvpn_f9embt.svg" alt="Proton VPN">
     </div>
 
-    <!-- النصوص -->
     <h1>Proton VPN</h1>
     <p class="description">تصفح الإنترنت بأمان وخصوصية تامة.</p>
 
-    <!-- زر التحميل -->
     <a class="btn" href="https://drive.google.com/uc?export=download&id=1-Xq8T7iB6yual-897yA7G5l0-pHKK2AE">
-      <svg viewBox="0 0 24 24">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
         <polyline points="7 10 12 15 17 10"></polyline>
         <line x1="12" y1="15" x2="12" y2="3"></line>
       </svg>
-      تحميل التطبيق
+      تحميل التطبيق الآن
     </a>
 
-    <!-- ملاحظة التثبيت -->
     <div class="note-box">
-      <svg class="note-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="note-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="10"></circle>
         <line x1="12" y1="16" x2="12" y2="12"></line>
         <line x1="12" y1="8" x2="12.01" y2="8"></line>
       </svg>
       <div class="note-text">
-        بعد اكتمال التحميل، يرجى تفعيل <span class="highlight">"تثبيت التطبيقات غير المعروفة"</span> من إعدادات هاتفك لتتمكن من التثبيت.
+        بعد التحميل، يرجى تفعيل <span class="highlight">"تثبيت التطبيقات غير المعروفة"</span> من إعدادات الهاتف لإتمام العملية.
       </div>
     </div>
   </div>
