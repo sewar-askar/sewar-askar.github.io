@@ -1,87 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Installer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>تثبيت التطبيق | Proton VPN</title>
+
+  <!-- استدعاء خط عربي احترافي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0f172a;
-      color: #f1f5f9;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
+      color: #f8fafc;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 20px;
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px 30px;
+      border-radius: 28px;
       text-align: center;
-      width: 320px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .app-icon-wrapper {
+      background: #ffffff;
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      margin-bottom: 24px;
+      padding: 10px;
     }
 
     .app-icon {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 15px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     h1 {
-      font-size: 20px;
-      margin: 10px 0 5px;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
     }
 
-    p {
-      font-size: 14px;
+    p.description {
+      font-size: 15px;
       color: #94a3b8;
-      margin-bottom: 20px;
+      margin-bottom: 32px;
+      line-height: 1.5;
     }
 
     .btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       border: none;
-      border-radius: 10px;
-      background: #22c55e;
-      color: #022c22;
-      font-weight: bold;
+      border-radius: 16px;
+      background: #3b82f6; /* لون أزرق عصري */
+      color: #ffffff;
+      font-weight: 700;
       font-size: 16px;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
     }
 
     .btn:hover {
-      background: #16a34a;
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
     }
 
-    .note {
-      margin-top: 15px;
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .note-box {
+      margin-top: 24px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-align: right;
+    }
+
+    .note-icon {
+      color: #cbd5e1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .note-text {
       font-size: 12px;
-      color: #64748b;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #3b82f6;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <img class="app-icon" src="https://vpncdn.protonweb.com/image-transformation/?s=c&image=image%2Fupload%2Fv1774890277%2Fstatic%2Flogos%2Ficons%2Fvpn_f9embt.svg" alt="Proton VPN">
+    <!-- أيقونة التطبيق -->
+    <div class="app-icon-wrapper">
+      <img class="app-icon" src="https://vpncdn.protonweb.com/image-transformation/?s=c&image=image%2Fupload%2Fv1774890277%2Fstatic%2Flogos%2Ficons%2Fvpn_f9embt.svg" alt="Proton VPN">
+    </div>
 
+    <!-- النصوص -->
     <h1>Proton VPN</h1>
-    <p>Secure and private internet access</p>
+    <p class="description">تصفح الإنترنت بأمان وخصوصية تامة.</p>
 
+    <!-- زر التحميل -->
     <a class="btn" href="https://drive.google.com/uc?export=download&id=1-Xq8T7iB6yual-897yA7G5l0-pHKK2AE">
-      Download APK
+      <svg viewBox="0 0 24 24">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      تحميل التطبيق
     </a>
 
-    <div class="note">
-      After download, enable "Install unknown apps"
+    <!-- ملاحظة التثبيت -->
+    <div class="note-box">
+      <svg class="note-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+      <div class="note-text">
+        بعد اكتمال التحميل، يرجى تفعيل <span class="highlight">"تثبيت التطبيقات غير المعروفة"</span> من إعدادات هاتفك لتتمكن من التثبيت.
+      </div>
     </div>
   </div>
 
